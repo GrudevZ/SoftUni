@@ -1,0 +1,23 @@
+using System;
+
+namespace p15   // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double A = double.Parse(Console.ReadLine());
+            double B = double.Parse(Console.ReadLine());
+            double C = double.Parse(Console.ReadLine());
+
+            if (A == B && B == C )
+            {
+                Console.WriteLine("yes");
+            }
+            else
+            {
+                Console.WriteLine("no");
+            }
+        }
+    }
+}

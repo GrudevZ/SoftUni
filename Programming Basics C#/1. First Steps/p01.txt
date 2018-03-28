@@ -1,0 +1,12 @@
+using System;
+
+namespace p01	// 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello SoftUni");
+        }
+    }
+}

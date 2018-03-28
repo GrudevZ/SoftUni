@@ -1,0 +1,141 @@
+using System;
+
+namespace p10   // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            if (n == 1)
+            {
+                Console.WriteLine("*");
+            }
+            else if (n % 2 == 0)
+            {
+                int leftRightDash = n / 2 - 1;
+                int middleDash = 0;
+
+                for (int i = 0; i < n / 2; i++)
+                {
+                    for (int j = 0; j < leftRightDash; j++)
+                    {
+                        Console.Write("-");
+                    }
+                    Console.Write("*");
+                    for (int k = 0; k < middleDash; k++)
+                    {
+                        Console.Write("-");
+                    }
+                    Console.Write("*");
+                    for (int j = 0; j < leftRightDash; j++)
+                    {
+                        Console.Write("-");
+                    }
+                    Console.WriteLine();
+                    leftRightDash -= 1;
+                    middleDash += 2;
+                }
+                middleDash -= 4;
+                leftRightDash = 1;
+                for (int i = 0; i < n / 2 - 1; i++)
+                {
+                    for (int j = 0; j < leftRightDash; j++)
+                    {
+                        Console.Write("-");
+                    }
+                    Console.Write("*");
+                    for (int k = 0; k < middleDash; k++)
+                    {
+                        Console.Write("-");
+                    }
+                    Console.Write("*");
+                    for (int j = 0; j < leftRightDash; j++)
+                    {
+                        Console.Write("-");
+                    }
+                    Console.WriteLine();
+                    leftRightDash += 1;
+                    middleDash -= 2;
+                }
+            }
+            else
+            {
+
+                    int leftRightDash = n / 2;
+                    int midlleDash = 1;
+
+                    // Print the first line
+                    for (int j = 0; j < leftRightDash; j++)
+                    {
+                        Console.Write("-");
+                    }
+                    Console.Write("*");
+                    for (int j = 0; j < leftRightDash; j++)
+                    {
+                        Console.Write("-");
+                    }
+                Console.WriteLine();
+
+
+                leftRightDash -= 1;
+
+                // Print the middle part
+                for (int i = 0; i < n / 2; i++)
+                {
+                    for (int j = 0; j < leftRightDash; j++)
+                    {
+                        Console.Write("-");
+                    }
+                    Console.Write("*");
+                    for (int k = 0; k < midlleDash; k++)
+                    {
+                        Console.Write("-");
+                    }
+                    Console.Write("*");
+                    for (int j = 0; j < leftRightDash; j++)
+                    {
+                        Console.Write("-");
+                    }
+                    Console.WriteLine();
+                    midlleDash += 2;
+                    leftRightDash -= 1;
+                }
+                midlleDash -= 4;
+                leftRightDash += 2;
+                for (int i = 0; i < n / 2 - 1; i++)
+                {
+                    for (int j = 0; j < leftRightDash; j++)
+                    {
+                        Console.Write("-");
+                    }
+                    Console.Write("*");
+                    for (int k = 0; k < midlleDash; k++)
+                    {
+                        Console.Write("-");
+                    }
+                    Console.Write("*");
+                    for (int j = 0; j < leftRightDash; j++)
+                    {
+                        Console.Write("-");
+                    }
+                    Console.WriteLine();
+                    midlleDash -= 2;
+                    leftRightDash += 1;
+                }
+                // Print the last line
+                for (int j = 0; j < leftRightDash; j++)
+                {
+                    Console.Write("-");
+                }
+                Console.Write("*");
+                for (int j = 0; j < leftRightDash; j++)
+                {
+                    Console.Write("-");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}

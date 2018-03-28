@@ -1,0 +1,16 @@
+using System;
+
+namespace p11   // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double dolars = double.Parse(Console.ReadLine());
+
+            double levs = dolars * 1.79549;
+
+            Console.WriteLine($"{levs:F2}");
+        }
+    }
+}

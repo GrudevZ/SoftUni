@@ -1,0 +1,33 @@
+using System;
+
+namespace p11   // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                try
+                {
+                    int n = int.Parse(Console.ReadLine());
+                    if (n % 2 == 0)
+                    {
+                        Console.WriteLine($"Number even entered : {n}");
+
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("The number is not even");
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Invalid number!");
+                }
+            }
+        }
+    }
+}

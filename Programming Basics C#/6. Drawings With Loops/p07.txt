@@ -1,0 +1,55 @@
+using System;
+
+namespace p07   // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            // Print the first line
+            for (int i = 0; i < n+1; i++)
+            {
+                Console.Write(" ");
+            }
+            Console.WriteLine("|");
+
+            // Print the second line
+            for (int i = 0; i < n-1; i++)
+            {
+                Console.Write(" ");
+            }
+            Console.WriteLine("* | *");
+
+            // Print the other lines
+
+            int spaces = n - 2;
+            int stars = 1;
+            for (int j = 0; j < n-1; j++)
+            {
+                for (int i = 0; i < spaces; i++)
+                {
+                    Console.Write(" ");
+                }
+                for (int i = 0; i < stars; i++)
+                {
+                    Console.Write("*");
+                }
+                Console.Write("* | *");
+                for (int i = 0; i < stars; i++)
+                {
+                    Console.Write("*");
+                }
+                for (int i = 0; i < spaces; i++)
+                {
+                    Console.Write(" ");
+                }
+                Console.WriteLine();
+                spaces -= 1;
+                stars += 1;
+            }
+
+        }
+    }
+}

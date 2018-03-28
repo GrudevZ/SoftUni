@@ -1,0 +1,16 @@
+using System;
+
+namespace p01   // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double side = double.Parse(Console.ReadLine());
+
+            double area = side * side;
+
+            Console.WriteLine(area);
+        }
+    }
+}

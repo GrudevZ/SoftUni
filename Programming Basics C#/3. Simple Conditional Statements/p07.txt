@@ -1,0 +1,20 @@
+using System;
+
+namespace p07   // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int runner1 = int.Parse(Console.ReadLine());
+            int runner2 = int.Parse(Console.ReadLine());
+            int runner3 = int.Parse(Console.ReadLine());
+
+            int result = runner1 + runner2 + runner3;
+            int min = result / 60;
+            int sec = result % 60;
+
+            Console.WriteLine($"{min}:{sec:D2}");
+        }
+    }
+}

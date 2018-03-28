@@ -1,0 +1,83 @@
+using System;
+
+namespace p12   // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double value = double.Parse(Console.ReadLine());
+            string inputCurrency = Console.ReadLine();
+            string outputCurrency = Console.ReadLine();
+
+            double toUsd = 1.79549;
+            double toEur = 1.95583;
+            double toGbp = 2.53405;
+
+            double result = 0;
+
+            if (inputCurrency == "BGN")
+            {
+                if (outputCurrency == "USD")
+                {
+                    result = value * 0.55695;
+                }
+                else if (outputCurrency == "EUR")
+                {
+                    result = value * 0.51129;
+                }
+                else if (outputCurrency == "GBP")
+                {
+                    result = value * 0.39463;
+                }
+            }
+            else if (inputCurrency == "USD")
+            {
+                if (outputCurrency == "BGN")
+                {
+                    result = value * 1.79549;
+                }
+                else if (outputCurrency == "EUR")
+                {
+                    result = value * 1.79549 * 0.51129;
+                }
+                else if (outputCurrency == "GBP")
+                {
+                    result = value * 1.79549 * 0.39463;
+                }
+            }
+            else if (inputCurrency == "EUR")
+            {
+                if (outputCurrency == "BGN")
+                {
+                    result = value * 1.95583;
+                }
+                else if (outputCurrency == "USD")
+                {
+                    result = value * 1.95583 * 0.55695;
+                }
+                else if (outputCurrency == "GBP")
+                {
+                    result = value * 1.95583 * 0.39463;
+                }
+            }
+            else if (inputCurrency == "GBP")
+            {
+                if (outputCurrency == "BGN")
+                {
+                    result = value * 2.53405;
+                }
+                else if (outputCurrency == "EUR")
+                {
+                    result = value * 2.53405 * 0.51129;
+                }
+                else if (outputCurrency == "USD")
+                {
+                    result = value * 2.53405 * 0.55695;
+                }
+            }
+
+            Console.WriteLine($"{result:F2} {outputCurrency}");
+        }
+    }
+}

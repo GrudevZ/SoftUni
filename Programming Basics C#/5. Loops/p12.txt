@@ -1,0 +1,40 @@
+using System;
+
+namespace p12   // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            double pairs = 0;
+            double oldPairs = 0;
+            double diff = 0;
+
+            for (int i = 0; i < n; i++)
+            {
+                double num1 = double.Parse(Console.ReadLine());
+                double num2 = double.Parse(Console.ReadLine());
+                pairs = num1 + num2;
+                diff = Math.Max(pairs, oldPairs) - Math.Min(pairs, oldPairs);
+                oldPairs = pairs;
+            }
+
+            if (n == 1)
+            {
+                Console.WriteLine("Yes, value={0}", diff);
+            }
+            else
+            {
+                if (diff == 0)
+                {
+                    Console.WriteLine("Yes, value={0}", pairs);
+                }
+                else
+                {
+                    Console.WriteLine("No, maxdiff={0}", diff);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+using System;
+
+namespace p12   // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string yearType = Console.ReadLine();
+            int holidays = int.Parse(Console.ReadLine());
+            int homeTravel = int.Parse(Console.ReadLine());
+
+            double playSofia = (48 - homeTravel) * 3.0 / 4;
+            double playHome = homeTravel;
+            double playHolidays = holidays * 2.0 / 3;
+
+            double playSum = playSofia + playHome + playHolidays;
+
+            if (yearType == "leap")
+            {
+                playSum *= 1.15;
+            }
+            double result = Math.Truncate(playSum);
+            Console.WriteLine(result);
+        }
+    }
+}

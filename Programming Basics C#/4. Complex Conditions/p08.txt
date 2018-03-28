@@ -1,0 +1,95 @@
+using System;
+
+namespace p08   // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string town = Console.ReadLine().ToLower();
+            double income = double.Parse(Console.ReadLine());
+
+            double discount = 0;
+
+            if (town == "sofia")
+            {
+                if (income >= 0 && income <= 500)
+                {
+                    discount = 0.05;
+                }
+                else if (income > 500 && income <= 1000)
+                {
+                    discount = 0.07;
+                }
+                else if (income > 1000 && income <= 10000)
+                {
+                    discount = 0.08;
+                }
+                else if (income > 10000)
+                {
+                    discount = 0.12;
+                }
+                else
+                {
+                    Console.WriteLine("error");
+                    return;
+                }
+            }
+            else if (town == "plovdiv")
+            {
+                if (income >= 0 && income <= 500)
+                {
+                    discount = 0.055;
+                }
+                else if (income > 500 && income <= 1000)
+                {
+                    discount = 0.08;
+                }
+                else if (income > 1000 && income <= 10000)
+                {
+                    discount = 0.12;
+                }
+                else if (income > 10000)
+                {
+                    discount = 0.145;
+                }
+                else
+                {
+                    Console.WriteLine("error");
+                    return;
+                }
+            }
+            else if (town == "varna")
+            {
+                if (income >= 0 && income <= 500)
+                {
+                    discount = 0.045;
+                }
+                else if (income > 500 && income <= 1000)
+                {
+                    discount = 0.075;
+                }
+                else if (income > 1000 && income <= 10000)
+                {
+                    discount = 0.10;
+                }
+                else if (income > 10000)
+                {
+                    discount = 0.13;
+                }
+                else
+                {
+                    Console.WriteLine("error");
+                    return;
+                }
+            }
+            else
+            {
+                Console.WriteLine("error");
+                return;
+            }
+            double result = income * discount;
+            Console.WriteLine($"{result:F2}");
+        }
+    }
+}

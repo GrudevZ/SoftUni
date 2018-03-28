@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+
+namespace p08   // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            {
+                double value = double.Parse(Console.ReadLine());
+                string metric1 = (Console.ReadLine());
+                string metric2 = (Console.ReadLine());
+
+                var metrics = new Dictionary<string, double>()
+            {
+                {"m", 1},
+                {"mm", 1000},
+                {"cm", 100},
+                {"mi", 0.000621371192},
+                {"in", 39.3700787},
+                {"km", 0.001},
+                {"ft", 3.2808399},
+                {"yd", 1.0936133},
+            };
+
+                var result = value * (metrics[metric2] / metrics[metric1]);
+                Console.WriteLine("{0}", Math.Round(result, 8));
+            }
+
+        }
+    }
+}
