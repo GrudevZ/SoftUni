@@ -1,0 +1,18 @@
+using System;
+
+namespace p06   // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int start = int.Parse(Console.ReadLine());
+            int final = int.Parse(Console.ReadLine());
+
+            for (int i = Math.Min(start,final); i <= Math.Max(start,final); i++)
+            {
+                Console.WriteLine(i);
+            }
+        }
+    }
+}

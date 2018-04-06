@@ -1,0 +1,42 @@
+using System;
+
+namespace p02   // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string job = Console.ReadLine();
+            int quantity = int.Parse(Console.ReadLine());
+            double price = 0;
+
+            switch (job)
+            {
+                case "Athlete":
+                    price = 0.70;
+                    Console.WriteLine($"The {job} has to pay {quantity*price:F2}.");
+                    break;
+
+                case "Businessman":
+                    price = 1.00;
+                    Console.WriteLine($"The {job} has to pay {quantity * price:F2}.");
+                    break;
+
+                case "Businesswoman":
+                    price = 1.00;
+                    Console.WriteLine($"The {job} has to pay {quantity * price:F2}.");
+                    break;
+
+                case "SoftUni Student":
+                    price = 1.70;
+                    Console.WriteLine($"The {job} has to pay {quantity * price:F2}.");
+                    break;
+
+                default:
+                    price = 1.20;
+                    Console.WriteLine($"The {job} has to pay {quantity * price:F2}.");
+                    break;
+            }
+        }
+    }
+}

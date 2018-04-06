@@ -1,0 +1,42 @@
+using System;
+
+namespace p12   // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int first = int.Parse(Console.ReadLine());
+            int second = int.Parse(Console.ReadLine());
+            int stop = int.Parse(Console.ReadLine());
+            //
+            int total = 0;
+            int multyPlay = 0;
+            int count = 0;
+            bool check = true;
+            for (int i = first; i >= 1; i--)
+            {
+                for (int ii = 1; ii <= second; ii++)
+                {
+                    multyPlay = i * ii;
+                    multyPlay *= 3;
+                    total += multyPlay;
+                    count++;
+                    if ((total >= stop))
+                    {
+                        check = false;
+                        Console.WriteLine(count + " combinations");
+                        Console.WriteLine("Sum: {0} >= {1}", total, stop);
+                        return;
+                    }
+                }
+            }
+            Console.WriteLine(count + " combinations");
+            if (check)
+            {
+                Console.WriteLine("Sum: {0}", total);
+            }
+
+        }
+    }
+}

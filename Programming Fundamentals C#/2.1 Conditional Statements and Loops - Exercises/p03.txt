@@ -1,0 +1,62 @@
+using System;
+
+namespace p03   // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int countOfPeople = int.Parse(Console.ReadLine());
+            string package = Console.ReadLine();
+            string hallName = null;
+            int hallPrice = 0;
+            int packagePrice = 0;
+            double discount = 0;
+
+            if (countOfPeople <= 50)
+            {
+                hallName = "Small Hall";
+                hallPrice = 2500;
+            }
+            else if (countOfPeople > 50 && countOfPeople <= 100)
+            {
+                hallName = "Terrace";
+                hallPrice = 5000;
+            }
+            else if (countOfPeople > 100 && countOfPeople <= 120 )
+            {
+                hallName = "Great Hall";
+                hallPrice = 7500;
+            }
+            else
+            {
+                Console.WriteLine("We do not have an appropriate hall.");
+                return;
+            }
+
+            if (package == "Normal")
+            {
+                packagePrice = 500;
+                discount = 0.05;
+            }
+            else if (package == "Gold")
+            {
+                packagePrice = 750;
+                discount = 0.10;
+            }
+            else if (package == "Platinum")
+            {
+                packagePrice = 1000;
+                discount = 0.15;
+            }
+
+            double totalDiscount = (hallPrice + packagePrice) * discount;
+            double totalPrice = (hallPrice + packagePrice) - totalDiscount;
+            double priceProPerson = totalPrice / countOfPeople;
+
+            Console.WriteLine($"We can offer you the {hallName}");
+            Console.WriteLine($"The price per person is {priceProPerson:F2}$");
+            
+        }
+    }
+}
