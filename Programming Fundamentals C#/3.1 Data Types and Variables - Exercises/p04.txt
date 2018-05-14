@@ -1,0 +1,16 @@
+using System;
+
+namespace p04       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string input = Console.ReadLine();
+
+            int result = Convert.ToInt16(input, 16);
+
+            Console.WriteLine(result);
+        }
+    }
+}

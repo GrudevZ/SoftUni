@@ -1,0 +1,25 @@
+using System;
+
+namespace p12       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //  perimeter, area and diagonal by given its width and height
+
+            double width = double.Parse(Console.ReadLine());
+            double height = double.Parse(Console.ReadLine());
+
+            double diagonal = Math.Sqrt(width * width + height * height);
+
+            double perimeter = width * 2 + height * 2;
+            Console.WriteLine(perimeter);
+
+            double area = width * height;
+            Console.WriteLine(area);
+
+            Console.WriteLine(diagonal);
+        }
+    }
+}

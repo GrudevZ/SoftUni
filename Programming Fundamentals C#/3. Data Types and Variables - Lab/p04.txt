@@ -1,0 +1,17 @@
+using System;
+
+namespace p04       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int countOfPeople = int.Parse(Console.ReadLine());
+            int capacity = int.Parse(Console.ReadLine());
+
+            double result = countOfPeople / capacity;
+
+            Console.WriteLine(Math.Ceiling(1.0 * countOfPeople / capacity));
+        }
+    }
+}

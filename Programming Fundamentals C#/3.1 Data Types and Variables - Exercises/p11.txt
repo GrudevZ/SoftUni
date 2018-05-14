@@ -1,0 +1,29 @@
+using System;
+
+namespace p11       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            float distanceInMeter = float.Parse(Console.ReadLine());
+            float hours = float.Parse(Console.ReadLine());
+            float minutes = float.Parse(Console.ReadLine());
+            float seconds = float.Parse(Console.ReadLine());
+
+            // Speed -> Meter pro second
+            float timeSeconds = seconds + (minutes * 60.0f) + (hours * 3600.0f);
+            float speedMeterProSecond = distanceInMeter / timeSeconds;
+            Console.WriteLine($"{speedMeterProSecond}");
+
+            // Speed -> kilometers per hour
+            float timeHour = hours + (minutes / 60.0f) + (seconds / 3600.0f);
+            float speedKilometerPerHour = (distanceInMeter / 1000) / timeHour;
+            Console.WriteLine(speedKilometerPerHour);
+
+            // Speed -> kilometers per miles
+            float speedKilometerPerMile = (distanceInMeter / 1609f) / timeHour;
+            Console.WriteLine(speedKilometerPerMile);
+        }
+    }
+}

@@ -1,0 +1,23 @@
+using System;
+
+namespace p05       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string input = Console.ReadLine();
+
+            bool result = Convert.ToBoolean(input);
+
+            if (input == "True")
+            {
+                Console.WriteLine("Yes");
+            }
+            else
+            {
+                Console.WriteLine("No");
+            }
+        }
+    }
+}
