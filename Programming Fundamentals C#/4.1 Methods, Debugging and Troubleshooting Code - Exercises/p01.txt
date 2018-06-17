@@ -1,0 +1,20 @@
+using System;
+
+namespace p01       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name = Console.ReadLine();
+            string output = GetName(name);
+            Console.WriteLine($"Hello, {output}!");
+        }
+
+        static string GetName (string name)
+        {
+
+            return name;
+        }
+    }
+}

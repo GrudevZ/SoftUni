@@ -1,0 +1,43 @@
+using System;
+
+namespace p02       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num1 = int.Parse(Console.ReadLine());
+            int num2 = int.Parse(Console.ReadLine());
+            int num3 = int.Parse(Console.ReadLine());
+
+            int max12 = GetMax12(num1,num2);
+            int maxAll = GetMaxAll(max12, num3);
+
+            Console.WriteLine(maxAll);
+        }
+
+        static int GetMax12 (int num1, int num2)
+        {
+            if (num1 > num2)
+            {
+                return num1;
+            }
+            else
+            {
+                return num2;
+            }
+        }
+
+        static int GetMaxAll(int max12, int num3)
+        {
+            if (max12 > num3)
+            {
+                return max12;
+            }
+            else
+            {
+                return num3;
+            }
+        }
+    }
+}

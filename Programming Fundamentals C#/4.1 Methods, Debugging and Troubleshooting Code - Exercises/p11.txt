@@ -1,0 +1,49 @@
+using System;
+
+namespace p11       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string figureType = Console.ReadLine();
+
+            PrintAreaFigure(figureType);
+        }
+
+        static void PrintAreaFigure(string figureType)
+        {
+            switch (figureType)
+            {
+                case "triangle":
+                    double sideTriangle = double.Parse(Console.ReadLine());
+                    double height = double.Parse(Console.ReadLine());
+
+                    double areaTriangle = (sideTriangle * height) / 2;
+                    Console.WriteLine($"{areaTriangle:F2}");
+                    break;
+                case "square":
+                    double sideSquare = double.Parse(Console.ReadLine());
+
+                    double areaSquare = (sideSquare * sideSquare);
+                    Console.WriteLine($"{areaSquare:F2}");
+                    break;
+
+                case "rectangle":
+                    double sideRectangle = double.Parse(Console.ReadLine());
+                    double heightRectangle = double.Parse(Console.ReadLine());
+
+                    double areaRectangle = (sideRectangle * heightRectangle);
+                    Console.WriteLine($"{areaRectangle:F2}");
+                    break;
+
+                case "circle":
+                    double radius = double.Parse(Console.ReadLine());
+
+                    double areaCircle = Math.PI * (radius * radius);
+                    Console.WriteLine($"{areaCircle:F2}");
+                    break;
+            }
+        }
+    }
+}

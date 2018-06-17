@@ -1,0 +1,67 @@
+using System;
+
+namespace p09       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double x1 = double.Parse(Console.ReadLine());
+            double y1 = double.Parse(Console.ReadLine());
+
+            double x2 = double.Parse(Console.ReadLine());
+            double y2 = double.Parse(Console.ReadLine());
+
+            double x3 = double.Parse(Console.ReadLine());
+            double y3 = double.Parse(Console.ReadLine());
+
+            double x4 = double.Parse(Console.ReadLine());
+            double y4 = double.Parse(Console.ReadLine());
+
+            double lineOneLenght = FindLongerLine(x1, y1, x2, y2);
+            double lineTwoLenght = FindLongerLine(x3, y3, x4, y4);
+
+            if (lineOneLenght >= lineTwoLenght)
+            {
+                double pointOneToCent = FindClosestPoint(x1, y1);
+                double pointTwoToCent = FindClosestPoint(x2, y2);
+
+                if (pointOneToCent <= pointTwoToCent)
+                {
+                    Console.WriteLine($"({x1}, {y1})({x2}, {y2})");
+                }
+                else
+                {
+                    Console.WriteLine($"({x2}, {y2})({x1}, {y1})");
+                }
+            }
+
+            else
+            {
+                double pointOneToCent = FindClosestPoint(x3, y3);
+                double pointTwoToCent = FindClosestPoint(x4, y4);
+
+                if (pointOneToCent <= pointTwoToCent)
+                {
+                    Console.WriteLine($"({x3}, {y3})({x4}, {y4})");
+                }
+                else
+                {
+                    Console.WriteLine($"({x4}, {y4})({x3}, {y3})");
+                }
+            }
+        }
+
+        static double FindLongerLine(double x1, double y1, double x2, double y2)
+        {
+            double result = Math.Pow((x2 - x1), 2) + Math.Pow((y2 - y1), 2);
+            return result;
+        }
+
+        static double FindClosestPoint(double coordinateX1, double coordinateY1)
+        {
+            double distancePointToCent = Math.Sqrt(Math.Pow(coordinateX1, 2) + Math.Pow(coordinateY1, 2));
+            return distancePointToCent;
+        }
+    }
+}

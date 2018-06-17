@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+
+namespace p07       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int start = int.Parse(Console.ReadLine());
+            int end = int.Parse(Console.ReadLine());
+            IsPrime(start, end);
+        }
+
+        private static void IsPrime(int start, int end)
+        {
+            var primeNumbers = new List<int>();
+            for (int i = start; i <= end; i++)
+            {
+                bool isPrime = i > 1;
+                double limit = Math.Sqrt(i);
+
+                for (int j = 2; j <= limit; j++)
+                {
+                    if (i % j == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if (isPrime)
+                {
+                    primeNumbers.Add(i);
+                }
+            }
+            Console.WriteLine(string.Join(", ", primeNumbers));
+        }
+    }
+}

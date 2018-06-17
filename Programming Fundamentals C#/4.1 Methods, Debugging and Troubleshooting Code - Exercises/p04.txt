@@ -1,0 +1,20 @@
+using System;
+
+namespace p04       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            PrintReversed();
+        }
+
+        static void PrintReversed()
+        {
+            string revNum = Console.ReadLine();
+            for (int i = revNum.Length - 1; i >= 0; i--)
+                Console.Write(revNum[i]);
+            Console.WriteLine();
+        }
+    }
+}

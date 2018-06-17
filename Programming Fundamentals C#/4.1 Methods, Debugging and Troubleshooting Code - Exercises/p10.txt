@@ -1,0 +1,41 @@
+using System;
+
+namespace p10       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double sideCube = double.Parse(Console.ReadLine());
+            string properties = Console.ReadLine();
+
+            PrintProperties(sideCube, properties);
+        }
+
+        private static void PrintProperties(double sideCube, string properties)
+        {
+            double result = 0;
+
+            if (properties.EndsWith("face"))
+            {
+                result = Math.Sqrt(2 * Math.Pow(sideCube, 2));
+                Console.WriteLine($"{result:F2}");
+            }
+            else if (properties.EndsWith("space"))
+            {
+                result = Math.Sqrt(3 * Math.Pow(sideCube, 2));
+                Console.WriteLine($"{result:F2}");
+            }
+            else if (properties.EndsWith("volume"))
+            {
+                result = Math.Pow(sideCube, 3);
+                Console.WriteLine($"{result:F2}");
+            }
+            else if (properties.EndsWith("area"))
+            {
+                result = 6 * Math.Pow(sideCube, 2);
+                Console.WriteLine($"{result:F2}");
+            }
+        }
+    }
+}
