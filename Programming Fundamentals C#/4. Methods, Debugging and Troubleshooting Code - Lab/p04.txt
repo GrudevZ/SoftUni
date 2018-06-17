@@ -1,0 +1,40 @@
+using System;
+
+namespace p04       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            PrintHeaderLine(n);
+            for (int i = 0; i < n-2; i++)
+            {
+                PrintMiddleLines(n);
+            }
+            
+            PrintFooterLine(n);
+        }
+
+        static void PrintHeaderLine (int n)
+        {
+            Console.WriteLine(new string('-',2 * n));
+        }
+
+        static void PrintMiddleLines (int n)
+        {
+            Console.Write("-");
+            for (int i = 1; i < n; i++)
+            {
+                Console.Write("\\/");
+            }
+            Console.WriteLine("-");
+        }
+
+        static void PrintFooterLine(int n)
+        {
+            Console.WriteLine(new string('-', 2 * n));
+        }
+    }
+}
