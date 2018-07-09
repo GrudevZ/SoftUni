@@ -1,0 +1,17 @@
+using System;
+using System.Linq;
+
+namespace p06       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] text = Console.ReadLine().Split(' ').ToArray();
+
+            string[] reversedText = text.Reverse().ToArray();
+
+            Console.WriteLine(string.Join(' ',reversedText));
+        }
+    }
+}

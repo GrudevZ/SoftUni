@@ -1,0 +1,23 @@
+using System;
+using System.Linq;
+
+namespace p02       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int[] numbers = new int [n];
+            for (int i = 0; i < n; i++)
+            {
+                numbers[i] = int.Parse(Console.ReadLine());
+            }
+
+            int[] reversed = new int[n];
+            reversed = numbers.Reverse().ToArray();
+
+            Console.WriteLine(string.Join(' ',reversed));
+        }
+    }
+}
