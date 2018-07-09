@@ -1,0 +1,39 @@
+using System;
+using System.Linq;
+
+namespace p01       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] arr1 = Console.ReadLine().Split(' ');
+            string[] arr2 = Console.ReadLine().Split(' ');
+
+            int countLeft = 0;
+            int countRight = 0;
+            
+            for (int i = 0; i < Math.Min(arr1.Length,arr2.Length); i++)
+            {
+                if (arr1[i] == arr2[i])
+                {
+                    countLeft++;
+                }
+            }
+
+            string[] reversedArr1 = new string[arr1.Length];
+            reversedArr1 = arr1.Reverse().ToArray();
+            string[] reversedArr2 = new string[arr2.Length];
+            reversedArr2 = arr2.Reverse().ToArray();
+
+            for (int i = 0; i < Math.Min(arr1.Length, arr2.Length); i++)
+            {
+                if (reversedArr1[i] == reversedArr2[i])
+                {
+                    countRight++;
+                }
+            }
+            Console.WriteLine(Math.Max(countLeft, countRight));
+        }
+    }
+}
