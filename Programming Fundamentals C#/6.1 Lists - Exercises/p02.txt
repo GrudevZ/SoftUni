@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace p02       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> numbers = Console.ReadLine()
+                .Split(' ')
+                .Select(int.Parse)
+                .ToList();
+
+            List<string> command = Console.ReadLine()
+                .Split(' ')
+                .ToList();
+
+            while (command[0] == "Delete" || command[0] == "Insert")
+            {
+                if (command[0] == "Delete")
+                {
+                    int number = int.Parse(command[1]);
+                    numbers.RemoveAll(num => num == number);
+                }
+                else if (command[0] == "Insert")
+                {
+                    int number = int.Parse(command[1]);
+                    int index = int.Parse(command[2]);
+                    numbers.Insert(index, number);
+                }
+
+                command = Console.ReadLine()
+                    .Split(' ')
+                    .ToList();
+            }
+
+            if (command[0] == "Odd")
+            {
+                numbers.RemoveAll(x => x % 2 == 0);
+            }
+            else if (command[0] == "Even")
+            {
+                numbers.RemoveAll(x => x % 2 == 1);
+            }
+
+            Console.WriteLine(string.Join(" ",numbers));
+        }
+    }
+}

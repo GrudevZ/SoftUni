@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace p03       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> numbers = Console.ReadLine()
+                 .Split(' ')
+                 .Select(int.Parse)
+                 .ToList();
+
+            int[] commandNumbers = Console.ReadLine()
+                .Split(' ')
+                .Select(int.Parse)
+                .ToArray();
+
+            numbers.Take(commandNumbers[0]);
+
+            numbers.RemoveRange(0,commandNumbers[1]);
+
+            bool result = numbers.Contains(commandNumbers[2]);
+
+            if (result == true)
+            {
+                Console.WriteLine("YES!");
+            }
+            else
+            {
+                Console.WriteLine("NO!");
+            }
+        }
+    }
+}
