@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace p06       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> inputNumbers = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
+            int k = inputNumbers.Count / 4;
+
+            List<int> leftRow1 = inputNumbers.Take(k).Reverse().ToList();
+            List<int> rightRow1 = inputNumbers.TakeLast(k).Reverse().ToList();
+            List<int> firstRow = leftRow1.Concat(rightRow1).ToList();
+            List<int> secondRow = inputNumbers.Skip(k).Take(2 * k).ToList();
+            List<int> sumNumbers = firstRow.Select((x, index) => x + secondRow[index]).ToList();
+
+            Console.WriteLine(string.Join(" ", sumNumbers));
+        }
+    }
+}

@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace p02       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] words = Console.ReadLine()
+                .ToLower()
+                .Split(' ')
+                .ToArray();
+            Dictionary<string, int> wordCount = new Dictionary<string, int>();
+            
+            foreach (var word in words)
+            {
+                if (!wordCount.ContainsKey(word))
+                {
+                    wordCount[word] = 1;
+                }
+                else
+                {
+                    wordCount[word]++;
+                }
+            }
+            List<string> result = new List<string>();
+
+            foreach (var kvp in wordCount)
+            {
+                string word = kvp.Key;
+                int count = kvp.Value;
+
+                if (kvp.Value % 2 ==1)
+                {
+                    result.Add(word);
+                }
+            }
+            Console.WriteLine(string.Join(", ",result));
+        }
+    }
+}

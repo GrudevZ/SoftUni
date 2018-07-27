@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace p01       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double[] numbers = Console.ReadLine()
+                .Split(' ')
+                .Select(double.Parse).ToArray();
+
+            SortedDictionary<double, int> countOfNumbers = new SortedDictionary<double, int>();
+
+            foreach (var number in numbers)
+            {
+                if (!countOfNumbers.ContainsKey(number))
+                {
+                    countOfNumbers[number] = 1;
+                }
+                else
+                {
+                    countOfNumbers[number]++;
+                }
+            }
+
+            foreach (var kvp in countOfNumbers)
+            {
+                Console.WriteLine($"{kvp.Key} -> {kvp.Value}");
+            }
+        }
+    }
+}

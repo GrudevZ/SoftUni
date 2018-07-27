@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace p04       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<double> numbers = Console.ReadLine()
+                .Split(' ')
+                .Select(double.Parse)
+                .ToList();
+
+            List<double> result = new List<double>();
+
+            result = numbers.OrderByDescending(x => x).Take(3).ToList();
+
+            Console.WriteLine(string.Join(" ",result));
+        }
+    }
+}
