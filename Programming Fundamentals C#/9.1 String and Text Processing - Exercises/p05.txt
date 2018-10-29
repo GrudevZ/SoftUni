@@ -1,0 +1,27 @@
+using System;
+using System.Linq;
+
+namespace p05       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] input = Console.ReadLine().Split(' ').ToArray();
+            string word1 = input[0];
+            string word2 = input[1];
+
+            int w1 = word1.ToCharArray().Distinct().Count();
+            int w2 = word2.ToCharArray().Distinct().Count();
+
+            if (w1 == w2)
+            {
+                Console.WriteLine("true");
+            }
+            else
+            {
+                Console.WriteLine("false");
+            }
+        }
+    }
+}

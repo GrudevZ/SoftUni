@@ -1,0 +1,18 @@
+using System;
+
+namespace p03       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var text = Console.ReadLine();
+
+            foreach (var symbol in text)
+            {
+                Console.Write($"\\u{(int)symbol:x4}");
+            }
+            Console.WriteLine();
+        }
+    }
+}
