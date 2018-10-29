@@ -1,0 +1,31 @@
+using System;
+using System.Linq;
+
+namespace p02       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] words = Console.ReadLine().
+                Split(' ').
+                ToArray();
+
+            var random = new Random();
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                string currenrWord = words[i];
+                int randomIndex = random.Next(0, words.Length);
+                string randomWord = words[randomIndex];
+
+                words[i] = randomWord;
+                words[randomIndex] = currenrWord;
+            }
+            foreach (var word in words)
+            {
+                Console.WriteLine(word);
+            }
+        }
+    }
+}
