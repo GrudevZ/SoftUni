@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+
+namespace p04       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name = Console.ReadLine();
+            var mailbook = new Dictionary<string, string>();
+
+            while (name != "stop")
+            {          
+            string email = Console.ReadLine();
+
+                if (!mailbook.ContainsKey(name))
+                {
+                    mailbook.Add(name, email);
+                }
+                else
+                {
+                    mailbook[email] = email;
+                }
+
+                if (email.EndsWith(".us") || email.EndsWith(".uk"))
+                {
+                    mailbook.Remove(name);
+                }
+
+
+                name = Console.ReadLine();
+            }
+
+            foreach (var kvp in mailbook)
+            {
+                Console.WriteLine($"{kvp.Key} -> {kvp.Value}");
+            }
+        }
+    }
+}

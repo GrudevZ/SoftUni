@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+
+namespace p03       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string commands = Console.ReadLine();
+            Dictionary<string, int> mine = new Dictionary<string, int>();
+
+            string sourse = "";
+            int quantity = 0;
+
+            while (commands != "stop")
+            {
+                sourse = commands;
+                quantity = int.Parse(Console.ReadLine());
+
+                if (!mine.ContainsKey(sourse))
+                {
+                    mine.Add(sourse, quantity);
+                }
+                else
+                {
+                    mine[sourse] += quantity; 
+                }
+
+                commands = Console.ReadLine();
+            }
+
+            foreach (var kvp in mine)
+            {
+                Console.WriteLine($"{kvp.Key} -> {kvp.Value}");
+            }
+        }
+    }
+}
