@@ -1,0 +1,31 @@
+using System;
+
+namespace p02       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string text = Console.ReadLine().ToLower();
+
+            string pattern = Console.ReadLine().ToLower();
+
+            int count = 0;
+            int index = 0;
+
+            while (true)
+            {
+                index = text.IndexOf(pattern,index);
+
+                if (index < 0)
+                {
+                    break;
+                }
+                count++;
+                index++;
+            }
+
+            Console.WriteLine(count);
+        }
+    }
+}
