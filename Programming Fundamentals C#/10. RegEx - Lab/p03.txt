@@ -1,0 +1,23 @@
+using System;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace p03       // 100/100
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string pattern = @"\b(?:0x)?[0-A9-F]+\b";
+
+            string numbersHex = Console.ReadLine();
+
+            var number = Regex.Matches(numbersHex, pattern)
+                .Cast<Match>()
+                .Select(a => a.Value)
+                .ToArray();
+
+            Console.WriteLine(string.Join(" ", number));
+        }
+    }
+}
