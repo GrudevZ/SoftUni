@@ -1,0 +1,100 @@
+using System;
+
+namespace _03._Vacation
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int people = int.Parse(Console.ReadLine());
+            string typeOfGroup = Console.ReadLine();
+            string dayOfWeek = Console.ReadLine();
+
+            double pricePerPeople = 0;
+
+            if (typeOfGroup == "Students")
+            {
+                if (dayOfWeek == "Friday")
+                {
+                    pricePerPeople = 8.45;
+                    if (people >= 30)
+                    {
+                        pricePerPeople *= 0.85;
+                    }
+                }
+                else if (dayOfWeek == "Saturday")
+                {
+                    pricePerPeople = 9.80;
+                    if (people >= 30)
+                    {
+                        pricePerPeople *= 0.85;
+                    }
+                }
+                else if (dayOfWeek == "Sunday")
+                {
+                    pricePerPeople = 10.46;
+                    if (people >= 30)
+                    {
+                        pricePerPeople *= 0.85;
+                    }
+                }
+            }
+            else if (typeOfGroup == "Business")
+            {
+                if (dayOfWeek == "Friday")
+                {
+                    pricePerPeople = 10.90; ;
+                    if (people >= 100)
+                    {
+                        people -= 10;
+                    }
+                }
+                else if (dayOfWeek == "Saturday")
+                {
+                    pricePerPeople = 15.60;
+                    if (people >= 100)
+                    {
+                        people -= 10;
+                    }
+                }
+                else if (dayOfWeek == "Sunday")
+                {
+                    pricePerPeople = 16;
+                    if (people >= 100)
+                    {
+                        people -= 10;
+                    }
+                }
+            }
+            else if (typeOfGroup == "Regular")
+            {
+                if (dayOfWeek == "Friday")
+                {
+                    pricePerPeople = 15; ;
+                    if (people >= 10 && people <= 20)
+                    {
+                        pricePerPeople *= 0.95;
+                    }
+                }
+                else if (dayOfWeek == "Saturday")
+                {
+                    pricePerPeople = 20;
+                    if (people >= 10 && people <= 20)
+                    {
+                        pricePerPeople *= 0.95;
+                    }
+                }
+                else if (dayOfWeek == "Sunday")
+                {
+                    pricePerPeople = 22.50;
+                    if (people >= 10 && people <= 20)
+                    {
+                        pricePerPeople *= 0.95;
+                    }
+                }
+            }
+            double result = pricePerPeople * people;
+            Console.WriteLine($"Total price: {result:F2}");
+        }
+    }
+}
