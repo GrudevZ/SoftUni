@@ -1,0 +1,128 @@
+using System;
+
+namespace _03._Gaming_Store
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double budget = double.Parse(Console.ReadLine());
+
+            // OutFall 4   $39.99
+            // CS: OG  $15.99
+            // Zplinter Zell	$19.99
+            // Honored 2   $59.99
+            // RoverWatch  $29.99
+            // RoverWatch Origins Edition  $39.99
+
+            string gameName = Console.ReadLine();
+            double gamePrice = 0;
+            double sum = 0;
+
+            while (true)
+            {
+                if (gameName == "Game Time")
+                {
+                    break;
+                }
+                else if (gameName == "Zplinter Zell")
+                {
+                    gamePrice = 19.99;
+                    if (gamePrice <= budget)
+                    {
+                        Console.WriteLine($"Bought {gameName}");
+                        budget -= gamePrice;
+                        sum += gamePrice;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Too Expensive");
+                    }
+                }
+                else if (gameName == "CS: OG")
+                {
+                    gamePrice = 15.99;
+                    if (gamePrice <= budget)
+                    {
+                        Console.WriteLine($"Bought {gameName}");
+                        budget -= gamePrice;
+                        sum += gamePrice;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Too Expensive");
+                    }
+                }
+                else if (gameName == "Honored 2")
+                {
+                    gamePrice = 59.99;
+                    if (gamePrice <= budget)
+                    {
+                        Console.WriteLine($"Bought {gameName}");
+                        budget -= gamePrice;
+                        sum += gamePrice;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Too Expensive");
+                    }
+                }
+                else if (gameName == "OutFall 4")
+                {
+                    gamePrice = 39.99;
+                    if (gamePrice <= budget)
+                    {
+                        Console.WriteLine($"Bought {gameName}");
+                        budget -= gamePrice;
+                        sum += gamePrice;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Too Expensive");
+                    }
+                }
+                else if (gameName == "RoverWatch")
+                {
+                    gamePrice = 29.99;
+                    if (gamePrice <= budget)
+                    {
+                        Console.WriteLine($"Bought {gameName}");
+                        budget -= gamePrice;
+                        sum += gamePrice;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Too Expensive");
+                    }
+                }
+                else if (gameName == "RoverWatch Origins Edition")
+                {
+                    gamePrice = 39.99;
+                    if (gamePrice <= budget)
+                    {
+                        Console.WriteLine($"Bought {gameName}");
+                        budget -= gamePrice;
+                        sum += gamePrice;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Too Expensive");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Not Found");
+                }
+                gameName = Console.ReadLine();
+            }
+            if (budget == 0)
+            {
+                Console.WriteLine("Out of money!");
+            }
+            else
+            {
+                Console.WriteLine($"Total spent: ${sum:F2}. Remaining: ${budget:F2}");
+            }
+        }
+    }
+}
