@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+
+namespace _06._Reversed_Chars
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string symbol1 = Console.ReadLine();
+            string symbol2 = Console.ReadLine();
+            string symbol3 = Console.ReadLine();
+
+            List<string> symbols = new List<string>();
+            symbols.Add(symbol1);
+            symbols.Add(symbol2);
+            symbols.Add(symbol3);
+
+            symbols.Reverse();
+
+            Console.WriteLine(string.Join(" ", symbols));
+        }
+    }
+}
